@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EJS Tags</title>
+</head>
+
+<body>
+  <h1>
+    <!-- Tite goes here -->
+    <%= title %>
+  </h1>
+  <p>Current second: 
+    <!-- Current second goes here -->
+    <%= seconds %>
+  </p> 
+  
+  <!-- IMP :- here each single line should have separate ejs tags coz there are so many html tags as well if we add html tags in ejs tags they will act  -->
+
+  <!-- also for future reference those ejs files should be in views folder  -->
+
+  <% if (seconds % 2===0) { %>
+  <ul>
+    <!-- List goes here if current second is even. -->
+    <% items.forEach(fruit => { %>
+     <li>
+      <%= fruit %>
+     </li>
+    <% }) %>
+
+
+    <!-- Otherwise it should display the following: -->
+    <!-- <p>No items to display</p> -->
+  </ul>
+  <% } else { %>
+      <p>No items to display</p>
+      <% } %>
+  <p>
+    <!-- HTML content goes here -->
+
+    <%- htmlContent  %>
+  </p>
+
+  <!-- Footer goes here -->
+  <%- include("footer.ejs") %>  <!-- this how we include file if we want to include it -->
+</body>
+
+</html>
